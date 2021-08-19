@@ -1,0 +1,15 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
+
+.heading {
+  margin: 50px;
+}
+
+.center {
+  margin: 90px;
+  text-align: center;
+}

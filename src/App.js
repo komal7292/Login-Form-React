@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Style.css';
 
 function App() {
   const [email, setEmail] = useState("");
@@ -10,21 +11,25 @@ function App() {
     setAllEntry([...allEntry, newEntry]);
   }
   return (
-    <div>
+    <div className="center">
       <form onSubmit={submitForm}>
+        <div className="heading">
+          <h1>Login Form</h1>
+        </div>
         <div>
           <label htmlFor="email">Email: </label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
+        <br />
         <div>
           <label htmlFor="password">Password: </label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -33,13 +38,14 @@ function App() {
         <div>
           <button type="submit">Submit</button>
         </div>
+        <br />
         <div>
           {
-            allEntry.map((value)=>{
+            allEntry.map((value, index)=>{
               return (
-                <div>
-                  <p>Email: {value.email}</p>
-                  <p>Password: {value.password}</p>
+                <div key="value">
+                  <p>{index} Email: {value.email}</p>
+                  <p>{index} Password: {value.password}</p>
                 </div>
               )
             })
@@ -50,3 +56,4 @@ function App() {
   );
 }
 export default App;
+
